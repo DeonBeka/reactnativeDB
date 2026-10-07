@@ -19,12 +19,18 @@ class PostScreen extends React.Component{
             <View>
                 <Text>Posts:</Text>
                 <Flatlist
-                keyExtractor = {posts => posts.id}
-                data={posts} renderItem={({item})=>(
-
+                keyExtractor = {(item) => item.id.toString()}
+                data={posts} 
+                renderItem={({item})=>(
+                    <View style={styles.postItem}>
+                        <Text style={styles.postId}>ID: {item.id}</Text>
+                        <Text style={styles.postTitle}>{item.title}</Text>
+                    </View>
                 )}
                 />
             </View>
         )
     }
 }
+
+export default PostScreen

@@ -4,7 +4,7 @@ import PersonalInfo_Screen from "./screen/PersonalInfo_Screen"
 import Challange from "./screen/challange"
 import ButtonScreen from './screen/ButtonScreen';
 import StudentScreen from './screen/StudentScreen';
-import BoxScreen from './screen/BoxScreen';
+import PostScreen from './screen/PostScreen';
 
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
       {/*<PersonalInfo_Screen/>*/}
       {/* <Challange/> */}
       {/* <StudentScreen/> */}
-      <BoxScreen/>
+      <PostScreen/>
     
 
     </View>
