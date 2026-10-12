@@ -1,10 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import PersonalInfo_Screen from "./screen/PersonalInfo_Screen"
-import Challange from "./screen/challange"
-import ButtonScreen from './screen/ButtonScreen';
-import StudentScreen from './screen/StudentScreen';
-import PostScreen from './screen/PostScreen';
+import PostScreen from './screen/TodoScreen';
+import TodoScreen from './screen/TodoScreen';
+
 
 
 export default function App() {
@@ -13,7 +11,8 @@ export default function App() {
       {/*<PersonalInfo_Screen/>*/}
       {/* <Challange/> */}
       {/* <StudentScreen/> */}
-      <PostScreen/>
+      {/* <PostScreen/> */}
+      <TodoScreen/>
     
 
     </View>
