@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 // import PostScreen from './screen/TodoScreen';
 // import TodoScreen from './screen/TodoScreen';
-import DatasetLocal from './screen/DatasetLocal';
+// import DatasetLocal from './screen/DatasetLocal';
+import ShoesScreen from './screen/Shoes';
+
 
 
 export default function App() {
@@ -13,7 +15,8 @@ export default function App() {
       {/* <StudentScreen/> */}
       {/* <PostScreen/> */}
       {/* <TodoScreen/> */}
-      <DatasetLocal/>
+      {/* <DatasetLocal/> */}
+      <ShoesScreen/>
     
 
     </View>

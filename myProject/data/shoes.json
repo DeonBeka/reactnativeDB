@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Nike Air Max 270",
+    "category": "shoes",
+    "price": "$150",
+    "stock": "Yes",
+    "image": "nike1",
+    "description": "Comfortable sneakers with Air cushioning for everyday wear."
+  },
+  {
+    "id": 2,
+    "name": "Adidas Ultraboost",
+    "category": "shoes",
+    "price": "$180",
+    "stock": "Yes",
+    "image": "adidas1",
+    "description": "Running shoes designed for comfort and energy return."
+  },
+  {
+    "id": 3,
+    "name": "Puma RS-X",
+    "category": "shoes",
+    "price": "$110",
+    "stock": "Yes",
+    "image": "puma1",
+    "description": "Stylish chunky sneakers with a modern design."
+  },
+  {
+    "id": 4,
+    "name": "Converse Chuck Taylor",
+    "category": "shoes",
+    "price": "$65",
+    "stock": "Yes",
+    "image": "converse1",
+    "description": "Classic canvas sneakers suitable for casual outfits."
+  },
+  {
+    "id": 5,
+    "name": "Vans Old Skool",
+    "category": "shoes",
+    "price": "$75",
+    "stock": "Yes",
+    "image": "oldschool1",
+    "description": "Iconic skate shoes with a durable suede and canvas upper."
+  },
+  {
+    "id": 6,
+    "name": "New Balance 574",
+    "category": "shoes",
+    "price": "$90",
+    "stock": "Yes",
+    "image": "newbalanc",
+    "description": "Versatile lifestyle sneakers with cushioned support."
+  },
+  {
+    "id": 7,
+    "name": "Jordan 1 Retro High",
+    "category": "shoes",
+    "price": "$180",
+    "stock": "No",
+    "image": "jordan",
+    "description": "Basketball-inspired high-top sneakers with a classic look."
+  },
+  {
+    "id": 9,
+    "name": "Dr. Martens 1460",
+    "category": "shoes",
+    "price": "$170",
+    "stock": "Yes",
+    "image": "martens",
+    "description": "Durable leather boots with a distinctive rugged style."
+  },
+  {
+    "id": 10,
+    "name": "Timberland Premium Boot",
+    "category": "shoes",
+    "price": "$200",
+    "stock": "Yes",
+    "image": "timberland",
+    "description": "Water-resistant leather boots designed for durability."
+  }
+]
