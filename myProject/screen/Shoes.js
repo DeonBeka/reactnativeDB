@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, ScrollView, Button } from 'react-native';
 import data from '../data/shoes.json';
 import adidas1 from '../images/adidas1.png';
 import converse1 from '../images/converse1.png';
@@ -10,6 +10,7 @@ import nike1 from '../images/nike1.png';
 import oldschool1 from '../images/oldschool1.png';
 import puma1 from '../images/puma1.png';
 import timberland from '../images/timberland.png';
+
 
 const shoeImages = {
   'adidas1': adidas1,
@@ -39,6 +40,7 @@ componentDidMount(){
 }
 
 render(){
+  
     return(
         <ScrollView>
             <Text style={styles.main}>Shoe Store</Text>
@@ -55,12 +57,15 @@ render(){
 
                 <Text style={styles.text}>Name: {item.name}</Text>
                 <Text>Category: {item.category}</Text>
-                <Text>Price: {item.price}</Text>
-                <Text>In Stock: {item.stock}</Text>
-                <Text>Description: {item.description}</Text>
+
             </View>
   )}
+  
 />
+<Button style={styles.btn} 
+                  title="View Details" 
+                  onPress={() => navigation.navigate('../screen/productDetails.js')}
+                />
         </ScrollView>
     )
 }}
@@ -91,6 +96,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.15,
     shadowRadius: 5,
+  },
+  btn:{
+    backgroundColor: '#067418',
+    borderRadius: 15,
+  
   },
 
   image: {
