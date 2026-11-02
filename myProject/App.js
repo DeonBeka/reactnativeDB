@@ -41,12 +41,14 @@
 // });
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import MainStackNavigator from './navigator/StackNavigator'; // Adjust path if needed
+import MainStackNavigator from './navigator/StackNavigator'; 
+import BottomTabNavigator from './navigator/TabNavigator';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <MainStackNavigator />
+      {/* <MainStackNavigator /> */}
+      <BottomTabNavigator/>
     </NavigationContainer>
   );
 }
