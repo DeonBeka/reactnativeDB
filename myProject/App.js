@@ -41,14 +41,15 @@
 // });
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import MainStackNavigator from './navigator/StackNavigator'; 
-import BottomTabNavigator from './navigator/TabNavigator';
+// import MainStackNavigator from './navigator/StackNavigator'; 
+// import BottomTabNavigator from './navigator/TabNavigator';
+import DrawerNavigator from './navigator/DrawerNavigator';
 
 export default function App() {
   return (
     <NavigationContainer>
       {/* <MainStackNavigator /> */}
-      <BottomTabNavigator/>
+      <DrawerNavigator/>
     </NavigationContainer>
   );
 }

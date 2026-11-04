@@ -1,7 +1,7 @@
 import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
-import {MainStackNavigator, AboutStackNavigator} from './StackNavigator';
+import {MainStackNavigator, AboutStackNavigator, ChallangeStackNavigator} from './StackNavigator';
  
 const Tab = createBottomTabNavigator();
 
@@ -9,8 +9,9 @@ const BottomTabNavigator =() =>{
     return(
     <Tab.Navigator
     tabBarOptions={{
-        activeTintColor: "white",
-        inactiveTintColor: "lightgray",
+        activeTintColor: "lightgray",
+        inactiveTintColor: "white",
+        
         style:{
             backgroundColor: "blue",
         },
@@ -32,7 +33,7 @@ const BottomTabNavigator =() =>{
         />
         <Tab.Screen
         name='About'
-        component={MainStackNavigator}
+        component={AboutStackNavigator}
         options={{
             tabBarLabel: 'About',
             tabBarIcon: ({color})=>(
@@ -40,9 +41,23 @@ const BottomTabNavigator =() =>{
             ),
         }}
         />
+
+        <Tab.Screen
+        name='Challange'
+        component={ChallangeStackNavigator}
+        options={{
+            tabBarLabel: 'Challenge',
+            tabBarIcon: ({color})=>(
+                <MaterialCommunityIcons name='crown' size={26} color={color}/>
+            ),
+        }}
+        />
         
     </Tab.Navigator>
     );
 }
+
+
+
 
 export default BottomTabNavigator;

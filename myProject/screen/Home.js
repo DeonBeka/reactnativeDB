@@ -10,6 +10,10 @@ const Home = ({ navigation }) => {
                 onPress={() => navigation.navigate('About')}
                 color="orange"
             />
+            <Button
+            title='Open Drawer'
+            onPress={()=> navigation.openDrawer()}
+            />
         </View>
     );
 };
