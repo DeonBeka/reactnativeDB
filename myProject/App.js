@@ -43,13 +43,15 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 // import MainStackNavigator from './navigator/StackNavigator'; 
 // import BottomTabNavigator from './navigator/TabNavigator';
-import DrawerNavigator from './navigator/DrawerNavigator';
-
+// import DrawerNavigator from './navigator/DrawerNavigator';
+import SwiperScreen from './navigator/SwiperScreen';
 export default function App() {
   return (
-    <NavigationContainer>
-      {/* <MainStackNavigator /> */}
-      <DrawerNavigator/>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <MainStackNavigator />
+    //   <DrawerNavigator/>
+      
+    // </NavigationContainer>
+    <SwiperScreen/>
   );
 }
