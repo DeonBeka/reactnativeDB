@@ -1,114 +1,172 @@
-import React from "react";
-import {View, Text, StyleSheet, Image} from 'react-native';
+
+
+import React from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Image,
+    TouchableOpacity
+} from 'react-native';
+
 import iphone16 from '../images/iphone16.jpg';
 import huawei from '../images/huawei.jpg';
 import yalla from '../images/yallahabibi.jpg';
 
 const shoeImages = {
-  'iphon16': iphone16,
-  'huawei': huawei,
-  'yalla': yalla,
-
+    iphon16: iphone16,
+    huawei: huawei,
+    yalla: yalla,
 };
 
-class ProductDetails extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            users: []
-        }
+const data = [
+    {
+        id: 1,
+        name: 'iPhone 16',
+        category: 'iPhone',
+        description: 'A powerful smartphone with an amazing camera and modern design.',
+        price: '$880',
+        image: 'iphon16',
+    },
+    {
+        id: 2,
+        name: 'Huawei',
+        category: 'Huawei',
+        description: 'A stylish smartphone with excellent performance.',
+        price: '$750',
+        image: 'huawei',
+    },
+    {
+        id: 3,
+        name: 'Yalla Habibi',
+        category: 'Samsung',
+        description: 'A modern smartphone with a beautiful design.',
+        price: '$990',
+        image: 'yalla',
+    },
+];
+
+class ProductDetails extends React.Component {
+
+    render() {
+        return (
+            <View style={styles.screen}>
+
+                <Text style={styles.main}>
+                    Most popular products
+                </Text>
+
+                {data.map((item) => (
+
+                    <TouchableOpacity
+                        key={item.id}
+                        style={styles.container}
+                        activeOpacity={0.7}
+                        onPress={() =>
+    this.props.onSelectProduct(item)
+}
+                    >
+
+                        <Image
+                            source={shoeImages[item.image]}
+                            style={styles.image}
+                            resizeMode="cover"
+                        />
+
+                        <View style={styles.info}>
+
+                            <Text style={styles.name}>
+                                {item.name}
+                            </Text>
+
+                            <Text style={styles.category}>
+                                {item.category}
+                            </Text>
+
+                            <Text style={styles.description}>
+                                {item.description}
+                            </Text>
+
+                            <Text style={styles.price}>
+                                {item.price}
+                            </Text>
+
+                        </View>
+
+                    </TouchableOpacity>
+
+                ))}
+
+            </View>
+        );
     }
-
-
-componentDidMount(){
-    this.setState({
-        users: data
-    })
 }
 
-render = (props) => {
-    return(
-        <View>
-                      <Text style={styles.main}>Most Products</Text>
-                       <FlatList
-                           data={this.state.users}
-                           keyExtractor={(item) => item.id.toString()}
-                           renderItem={({ item }) => (
-                       <View style={styles.container}>
-                           <Image
-                               source={shoeImages[item.image]}
-                               style={styles.image}
-                               resizeMode="contain"
-                           />
-           
-                           <Text style={styles.text}>Name: {item.name}</Text>
-                           <Text>Category: {item.category}</Text>
-           
-                       </View>
-             )}
-             
-           />
-           <Button style={styles.btn} 
-                             title="View Details" 
-                             onPress={() => navigation.navigate('../screen/productDetails.js')}
-                           />
-        </View>
-    );
-}}
-
 const styles = StyleSheet.create({
-   
-  screen: {
-    flex: 1,
-    backgroundColor: '#f2f2f2',
-  },
 
-  main: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#222',
-    marginVertical: 20,
-  },
+    screen: {
+        backgroundColor: '#fff',
+        flex: 1,
+    },
 
-  container: {
-    backgroundColor: '#fff',
-    marginHorizontal: 15,
-    marginVertical: 10,
-    padding: 15,
-    borderRadius: 15,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 5,
-  },
-  btn:{
-    backgroundColor: '#067418',
-    borderRadius: 15,
-  
-  },
+    main: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: '#222',
+        marginHorizontal: 25,
+        marginVertical: 20,
+    },
 
-  image: {
-    width: '100%',
-    height: 220,
-    backgroundColor: '#fff',
-    alignSelf: 'center',
-  },
+    container: {
+        flexDirection: 'row',
+        marginHorizontal: 25,
+        marginBottom: 30,
+        alignItems: 'flex-start',
+    },
 
-  text: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#222',
-    marginTop: 10,
-  },
+    image: {
+        width: 112,
+        height: 130,
+        borderRadius: 10,
+        backgroundColor: '#eee',
+    },
 
-  details: {
-    fontSize: 15,
-    color: '#555',
-    marginTop: 5,
-  },
+    info: {
+        flex: 1,
+        marginLeft: 12,
+    },
+
+    name: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        color: '#222',
+    },
+
+    category: {
+        fontSize: 14,
+        color: '#28c9e8',
+        marginTop: 3,
+    },
+
+    description: {
+        fontSize: 14,
+        fontStyle: 'italic',
+        color: '#333',
+        marginTop: 4,
+    },
+
+    price: {
+        alignSelf: 'flex-start',
+        backgroundColor: '#384053',
+        color: '#fff',
+        fontWeight: 'bold',
+        paddingHorizontal: 9,
+        paddingVertical: 3,
+        borderRadius: 15,
+        marginTop: 5,
+        overflow: 'hidden',
+    },
+
 });
 
-
-export default ProductDetails
+export default ProductDetails;

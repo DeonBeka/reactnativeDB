@@ -44,7 +44,8 @@ import { NavigationContainer } from '@react-navigation/native';
 // import MainStackNavigator from './navigator/StackNavigator'; 
 // import BottomTabNavigator from './navigator/TabNavigator';
 // import DrawerNavigator from './navigator/DrawerNavigator';
-import SwiperScreen from './navigator/SwiperScreen';
+// import SwiperScreen from './navigator/SwiperScreen';
+import IconsScreen from './navigator/IconsScreen';
 export default function App() {
   return (
     // <NavigationContainer>
@@ -52,6 +53,6 @@ export default function App() {
     //   <DrawerNavigator/>
       
     // </NavigationContainer>
-    <SwiperScreen/>
+    <IconsScreen/>
   );
 }

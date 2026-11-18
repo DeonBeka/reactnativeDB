@@ -1,35 +1,47 @@
+
 import React from "react";
-import {View, Text, StyleSheet} from 'react-native';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
+import { View, Text, StyleSheet } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Icons = (props) => {
-    return(
-        <View>
-            <View>
-                <MaterialCommunityIcons name={props.name} size={27} color="#22D4FF"/>
+    return (
+        <View style={styles.iconContainer}>
+            <View style={styles.iconWrapper}>
+                <MaterialCommunityIcons
+                    name={props.name}
+                    size={27}
+                    color="#22D4FF"
+                />
             </View>
-            <Text>{props.iconText}</Text>
+
+            <Text style={styles.iconText}>
+                {props.iconText}
+            </Text>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
-    iconWrapper:{
+    iconWrapper: {
         backgroundColor: '#384053',
-        width: '100%',
-        height: '100%',
+        width: 60,
+        height: 60,
         justifyContent: 'center',
-        alingItems: 'center',
+        alignItems: 'center',
         borderRadius: 50,
     },
-    iconContainer:{
+
+    iconContainer: {
         alignItems: 'center',
-        width: 60,
-        height: 60
+        width: 70,
     },
-    iconText:{
-        height:20,
-        fontWeight: '600'
-    }
-})
-export default Icons
+
+    iconText: {
+        height: 25,
+        fontWeight: '600',
+        color: '#222',
+        marginTop: 5,
+    },
+});
+
+export default Icons;
