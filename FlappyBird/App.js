@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import {View, Image, StyleSheet, Dimensions, TouchableWithoutFeedback, Image} from 'react-native';
 import Bird from './src/components/Bird';
 import Obstacle from './src/components/Obstacle';
@@ -22,5 +22,65 @@ export default function App(){
   let obstacleTimerId
 
   useEffect(()=>{
-  })
+    if(birdBottom > 0){
+      gameTimerId = setInterval(()=>{
+        setBirdBottom(birdBottom => birdBottom - gravity)
+      }, 30)
+
+      return () => {
+        clearInterval(gameTimerId)
+      }
+  }
+  }, [birdBottom])
+
+  useEffect(()=>{
+    if(obstacleLeft > -60){
+      obstacleTimerId = setInterval(()=>{
+        setObstacleLeft(obstacleLeft => obstacleLeft - 5)
+      }, 30)
+
+      return () => {
+        clearInterval(obstacleTimerId)
+      }
+    } else {
+      setScore(score + 1)
+      setObstacleLeft(screenWidth)
+      setObstacleHeight(-Math.random() * 100)
+    }
+  }, [obstacleLeft])
+
+  useEffect(()=>{
+    if(obstacleLeftTwo > -60){
+      obstacleTimerId = setInterval(()=>{
+        setObstacleLeftTwo(obstacleLeftTwo => obstacleLeftTwo - 5)
+      }, 30)
+
+      return () => {
+        clearInterval(obstacleTimerId)
+      }
+    } else {
+      setScore(score + 1)
+      setObstacleLeftTwo(screenWidth)
+      setObstacleHeightTwo(-Math.random() * 100)
+    }
+  }, [obstacleLeftTwo])
+   
+  const jump = () => {
+    if(!isGameOver && (birdBottom < screenHeight)){
+      setBirdBottom(birdBottom => birdBottom + 50)
+      console.log('jumped')
+    }
+  }
+
+  useEffect(()=>{
+    if(
+      (birdBottom < obstacleHeight + 500 + 30 && birdBottom > obstacleHeight + 500 + 30 - 30 && obstacleLeft > screenWidth / 2 - 30 && obstacleLeft < screenWidth / 2 + 30) ||
+      (birdBottom < obstacleHeightTwo + 500 + 30 && birdBottom > obstacleHeightTwo + 500 + 30 - 30 && obstacleLeftTwo > screenWidth / 2 - 30 && obstacleLeftTwo < screenWidth / 2 + 30) ||
+      birdBottom === 0
+    ){
+      console.log('game over')
+      gameOver()
+    }
+
+})
 }
